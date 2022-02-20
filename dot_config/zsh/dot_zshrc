@@ -5,8 +5,7 @@ include () {
     [[ -f "$1" ]] && source "$1"
 }
 
-
-[ $(command -v brew) ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 eval "$(sheldon source)"
 
