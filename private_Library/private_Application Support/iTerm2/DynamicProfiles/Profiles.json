@@ -484,7 +484,7 @@
     },
     "Use Non-ASCII Font" : false,
     "Has Hotkey" : false,
-    "Normal Font" : "Ricty-Regular 18",
+    "Normal Font" : "RictyDiminishedNerdFont-Regular 18",
     "Ansi 6 Color" : {
       "Red Component" : 0.0039215688593685627,
       "Color Space" : "Calibrated",

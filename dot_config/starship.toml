@@ -1,5 +1,8 @@
 # https://starship.rs/ja-jp/config/
 
+format = "$all$directory$character"
+add_newline = true
+
 [git_branch]
 symbol = ""
 
@@ -8,3 +11,17 @@ disabled = true
 
 [nodejs]
 symbol = ""
+
+[status]
+disabled = false
+style = "bg:red"
+format = '[$symbol$common_meaning$signal_name\($status\)]($style) '
+map_symbol = true
+
+[directory]
+truncation_length = 2
+truncate_to_repo = false
+truncation_symbol = "**/"
+
+[time]
+disabled = false
