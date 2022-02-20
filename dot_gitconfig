@@ -1,0 +1,41 @@
+[user]
+	name = mizdra
+	email = pp.mizdra@gmail.com
+
+[alias]
+	graph = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --date-order
+	CLEAR = reset --hard HEAD
+	s = switch
+	sclone = clone --depth 1
+	br = !gh pr view --web || gh browse
+	pu = !git push -u origin $(git symbolic-ref --short HEAD)
+
+[ghq]
+	root = ~/src
+
+[core]
+	excludesfile = ~/.gitignore
+	ignorecase = false
+
+[push]
+	default = simple
+
+[merge]
+	ff = false
+
+[pull]
+	ff = only
+	rebase = true
+
+[diff]
+	compactionHeuristic = true
+
+[rebase]
+	autosquash = true
+	autostash = true
+
+[init]
+	defaultBranch = main
+
+[credential]
+	helper = osxkeychain

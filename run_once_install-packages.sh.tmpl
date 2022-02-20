@@ -1,0 +1,30 @@
+#!/bin/sh
+
+{{ if eq .chezmoi.os "darwin" -}}
+
+# sheldon
+brew install sheldon
+# starship
+curl -fsSL https://starship.rs/install.sh | sh -s -- --yes
+# github CLI
+brew install gh
+# anyenv
+brew install anyenv
+# peco
+brew install peco
+
+{{ else if eq .chezmoi.os "linux" -}}
+
+# sheldon
+curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
+  | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
+# starship
+curl -fsSL https://starship.rs/install.sh | sh -s -- --yes
+# github CLI
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+apt update
+apt install gh
+# peco
+apt install peco
+{{ end -}}

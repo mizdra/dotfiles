@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# usage: git sy 
+
+set -e
+
+# run に渡されたコマンドを実行しつつ、コマンドの名前をログに出力する
+run() {
+  echo -e "\e[1m+$@\e[0m"
+  "$@"
+}
+
+# まず origin に存在するすべてのブランチを fetch してくる
+run git fetch --all
+
+# カレントブランチのトラッキングブランチがある時
+if TRACKING_BRANCH=$(git rev-parse --quiet --abbrev-ref --symbolic-full-name @{upstream} 2>/dev/null); then
+  # トラッキングブランチに変更があればそれを取り込む
+  run git merge --ff $TRACKING_BRANCH
+fi
+
+# 以下の操作を順々に行う
+# 1. origin から削除されたリモートブランチをローカル上から削除する (prune)
+# 2. トラッキングブランチが存在せず、既に HEAD にマージされているローカルブランチを削除する
+run git gone -pd

@@ -1,0 +1,19 @@
+{
+  "name": "dotfiles-development",
+  "image": "mcr.microsoft.com/vscode/devcontainers/base:hirsute",
+
+  "settings": {
+    "terminal.integrated.profiles.linux": {
+      "zsh": {
+        "path": "/usr/bin/zsh"
+      }
+    },
+    "terminal.integrated.defaultProfile.linux": "zsh",
+  },
+
+  "extensions": [],
+
+  "onCreateCommand": "sh -c \"$(curl -fsLS chezmoi.io/get)\" -- init --apply -S ${containerWorkspaceFolder}",
+
+  "features": {}
+}

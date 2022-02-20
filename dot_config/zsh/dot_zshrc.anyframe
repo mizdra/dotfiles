@@ -1,0 +1,10 @@
+# anyframe setting
+bindkey '^r' anyframe-widget-put-history
+bindkey '^a^f' anyframe-widget-insert-filename
+bindkey '^b' anyframe-widget-insert-git-branch
+bindkey '^s' anyframe-widget-cd-ghq-repository
+bindkey '^a^x' anyframe-widget-execute-history
+bindkey '^a^c' anyframe-widget-checkout-git-branch
+
+alias cdg=anyframe-widget-cd-ghq-repository
+alias cdra=anyframe-widget-cdr
