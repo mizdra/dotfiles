@@ -2,12 +2,11 @@
 
 ## How to install
 
-### Basic
-
-Fetch the latest dotfiles from https://github.com/mizdra/dotfiles and install them.
+### macOS
 
 ```bash
-sh -c \"$(curl -fsLS chezmoi.io/get)\" -- init --apply mizdra
+brew install chezmoi
+chezmoi init --apply mizdra
 ```
 
 ### Visual Studio Code Remote - Containers
@@ -33,7 +32,13 @@ To save disk space, use [`--one-shot`](https://www.chezmoi.io/reference/commands
 RUN sh -c \"$(curl -fsLS chezmoi.io/get)\" -- init --apply --one-shot mizdra
 ```
 
-### Manual
+### Manual (Install with cloning)
+
+```bash
+sh -c \"$(curl -fsLS chezmoi.io/get)\" -- init --apply mizdra
+```
+
+### Manual (Install after cloning)
 Using the [`-S`](https://www.chezmoi.io/reference/command-line-flags/global/#-s-source-directory) option, you can install from any location.
 
 ```bash
