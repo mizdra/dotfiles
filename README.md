@@ -13,7 +13,7 @@ chezmoi init --apply mizdra
 
 `dotfiles.installCommand` must specify the path to the executable file.
 
-`.vscode/settings.json`:
+`<user-settings-dir>/settings.json`:
 
 ```json
 {
