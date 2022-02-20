@@ -29,13 +29,13 @@ To save disk space, use [`--one-shot`](https://www.chezmoi.io/reference/commands
 `Dockerfile`:
 
 ```dockerfile
-RUN sh -c \"$(curl -fsLS chezmoi.io/get)\" -- init --apply --one-shot mizdra
+RUN sh -c "$(curl -fsLS chezmoi.io/get)" -- init --apply --one-shot mizdra
 ```
 
 ### Manual (Install with cloning)
 
 ```bash
-sh -c \"$(curl -fsLS chezmoi.io/get)\" -- init --apply mizdra
+sh -c "$(curl -fsLS chezmoi.io/get)" -- init --apply mizdra
 ```
 
 ### Manual (Install after cloning)
