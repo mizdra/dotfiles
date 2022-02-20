@@ -3,3 +3,8 @@
 /README.md
 /LICENSE
 /install.sh
+
+{{- if eq (env "REMOTE_CONTAINERS") "true" }}
+# devcontainer は自動でホストの .gitconfig をコンテナ内にコピーするため、chezmoi aplly の対象から外す
+/.gitconfig
+{{- end }}
