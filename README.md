@@ -12,13 +12,15 @@ sh -c \"$(curl -fsLS chezmoi.io/get)\" -- init --apply mizdra
 
 ### Visual Studio Code Remote - Containers
 
-To save installation time, use [`--depth`](https://www.chezmoi.io/reference/commands/init/#-depth-depth) option.
+`dotfiles.installCommand` must specify the path to the executable file.
 
 `.vscode/settings.json`:
 
 ```json
 {
-  "dotfiles.installCommand": "sh -c \"$(curl -fsLS chezmoi.io/get)\" -- init --apply --depth=1 mizdra"
+  "dotfiles.repository": "mizdra/dotfiles",
+  "dotfiles.targetPath": "~/dotfiles",
+  "dotfiles.installCommand": "~/dotfiles/install.sh",
 }
 ```
 
