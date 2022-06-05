@@ -9,6 +9,7 @@
 	sclone = clone --depth 1
 	br = !gh pr view --web || gh browse
 	pu = !git push -u origin $(git symbolic-ref --short HEAD)
+	cp = cherry-pick
 
 [ghq]
 	root = ~/src
