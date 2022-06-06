@@ -18,3 +18,7 @@ export PATH=$HOME/go/bin:$PATH
 # pnpm
 export PNPM_HOME=$HOME/.local/share/pnpm
 export PATH=$PNPM_HOME:$PATH
+
+# deno
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
